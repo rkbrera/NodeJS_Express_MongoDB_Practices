@@ -9,10 +9,13 @@ const port = 3001;
 
 DBConn();
 
+// Middleware
 app.use(jsonParser);
 
-app.use(tasksRouter);
-app.use(usersRouter)
+// routes
+app.use(
+  tasksRouter, 
+  usersRouter,);
 
 app.listen(port, () => {
   console.log(`Aplicacion escuchando por el puerto ${port}`);

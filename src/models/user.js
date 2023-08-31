@@ -7,6 +7,7 @@ const userSchema = new Schema(
     username: {
       type: String,
       required: [true, "El nombre de Usuario es requerido"],
+      unique: [true, "UserName Existente"]
     },
     name: {
       type: String,
@@ -19,6 +20,7 @@ const userSchema = new Schema(
     email: {
       type: String,
       required: [true, "Ingrese un correo electrónico"],
+      unique: [true, "dirección de correo electrónico registrada; ingrese otra"], /* para que no exista otro dato con mismo valor*/ 
     },
   },
   { timestamps: true }

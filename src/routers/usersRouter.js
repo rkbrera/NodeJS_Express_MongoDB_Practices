@@ -1,11 +1,16 @@
 import { Router } from "express";
-import { newUser } from "../controllers/userController";
+import { 
+    getUsers, 
+    createUser,
+    getUserById } from "../controllers/userController";
 
 const usersRouter = Router();
 
 usersRouter.route("/users")
-.post(newUser);
+.get(getUsers)
+.post(createUser);
 
-usersRouter.route("/users/:taskId");
+usersRouter.route("/users/:id")
+.get(getUserById)
 
 export default usersRouter;
