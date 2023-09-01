@@ -1,9 +1,10 @@
 import { Router } from "express";
-import { newTask } from "../controllers/tasksController";
+import {getTask, newTask } from "../controllers/tasksController";
 
 const tasksRouter = Router();
 
 tasksRouter.route("/tasks")
+.get(getTask)
 .post(newTask);
 
 tasksRouter.route("/tasks/:Id");
