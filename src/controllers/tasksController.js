@@ -2,11 +2,10 @@
 
 import Task from "../models/task";
 
- export const getTask = async (_, response) => {
+export const getTask = async (_, response) => {
   try {
     const tasks = await Task.find({});
     response.status(200).send(tasks);
-    
   } catch (error) {
     response.status(422).send({ error: error.message });
   }
@@ -23,11 +22,10 @@ export const newTask = async (request, response) => {
       name,
       complete,
     });
-    
+
     await newTask.save();
 
     response.status(201).send(newTask);
-
   } catch (error) {
     response.status(422).send({ error: error.message });
   }
