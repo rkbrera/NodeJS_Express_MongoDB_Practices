@@ -2,9 +2,15 @@
 
 import Task from "../models/task";
 
-// export const getTodoLists = (_, response) => {
-//   response.send(todoLists);
-// };
+ export const getTask = async (_, response) => {
+  try {
+    const tasks = await Task.find({});
+    response.status(200).send(tasks);
+    
+  } catch (error) {
+    response.status(422).send({ error: error.message });
+  }
+};
 
 export const newTask = async (request, response) => {
   // obtener la informacion que envia el cliente
