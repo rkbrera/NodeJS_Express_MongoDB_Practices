@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
 
-const uri =
-  "mongodb+srv://rkbr2928:XlciUhFgeHqXcEYx@cluster0.jje6eal.mongodb.net/todo_list_app?retryWrites=true&w=majority";
+const { DB_USERNAME, DB_PASSWORD, DB_HOSTNAME, DB_NAME } = process.env;
+
+const uri = `mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@${DB_HOSTNAME}/${DB_NAME}?retryWrites=true&w=majority`;
 
 export const DBConn = async () => {
   try {
