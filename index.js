@@ -1,4 +1,5 @@
 import express from "express";
+import {} from "dotenv/config"
 import { jsonParser } from "./src/middleware/bodyParser";
 import tasksRouter from "./src/routers/tasksRouter";
 import usersRouter from "./src/routers/usersRouter";
